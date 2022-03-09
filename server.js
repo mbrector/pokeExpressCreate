@@ -13,7 +13,7 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended:true}))
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the Pokemon App!')
+    res.redirect('/pokemon')
 })
 
 app.get('/pokemon', (req, res) => {

@@ -19,7 +19,17 @@ if(pokemon.name == 'bulbasaur' || pokemon.name == 'ivysaur' || pokemon.name == '
         <h2 style = {{color: 'darkgreen'}}>{pokename}</h2>
         <img src = {`${pokemon.img}.jpg`}></img>
         <br />
-        <a style = {{color: 'darkgreen'}} href = '/pokemon'>back</a>
+        <div style={{display:'inline-flex'}}>
+            <form action={`/pokemon/${pokemon._id}/edit?_method=EDIT`} method="PUT">
+                <input style={{backgroundColor:'blue', color:'white', borderRadius:'20px'}} type="submit" value="Edit"/>
+            </form>
+            <form action={`/pokemon/${pokemon._id}?_method=DELETE`} method="POST">
+                <input style={{backgroundColor:'crimson', color:'white',borderRadius:'20px'}} type="submit" value="Delete"/>
+            </form>
+        </div>
+        <button style = {{backgroundColor:'green', color: 'white', borderRadius: '20px'}}><a style ={{color:'white'}} href = '/pokemon'>Back to list</a></button>
+                          
+
         </body>
         </html>)
 }else if (pokemon.name == 'charmander' || pokemon.name == 'charizard'){
@@ -29,7 +39,15 @@ if(pokemon.name == 'bulbasaur' || pokemon.name == 'ivysaur' || pokemon.name == '
         <h2 style = {{color: 'yellow'}}>{pokename}</h2>
         <img src = {`${pokemon.img}.jpg`}></img>
         <br />
-        <a style = {{color: 'yellow'}} href = '/pokemon'>back</a>
+        <div style={{display:'inline-flex'}}>
+            <form action={`/pokemon/${pokemon._id}/edit?_method=EDIT`} method="PUT">
+                <input style={{backgroundColor:'blue', color:'white', borderRadius:'20px'}} type="submit" value="Edit"/>
+            </form>
+            <form action={`/pokemon/${pokemon._id}?_method=DELETE`} method="POST">
+                <input style={{backgroundColor:'crimson', color:'white',borderRadius:'20px'}} type="submit" value="Delete"/>
+            </form>
+        </div>
+        <button style = {{backgroundColor:'green', color: 'white', borderRadius: '20px'}}><a style ={{color:'white'}} href = '/pokemon'>Back to list</a></button>
         </body>)
 }else if (pokemon.name == 'squirtle' || pokemon.name == 'wartortle'){
     return(
@@ -38,7 +56,15 @@ if(pokemon.name == 'bulbasaur' || pokemon.name == 'ivysaur' || pokemon.name == '
         <h2 style = {{color: 'lightblue'}}>{pokename}</h2>
         <img src = {`${pokemon.img}.jpg`}></img>
         <br />
-        <a style = {{color: 'lightblue'}} href = '/pokemon'>back</a>
+        <div style={{display:'inline-flex'}}>
+            <form action={`/pokemon/${pokemon._id}/edit?_method=EDIT`} method="PUT">
+                <input style={{backgroundColor:'blue', color:'white', borderRadius:'20px'}} type="submit" value="Edit"/>
+            </form>
+            <form action={`/pokemon/${pokemon._id}?_method=DELETE`} method="POST">
+                <input style={{backgroundColor:'crimson', color:'white',borderRadius:'20px'}} type="submit" value="Delete"/>
+            </form>
+        </div>
+        <button style = {{backgroundColor:'green', color: 'white', borderRadius: '20px'}}><a style ={{color:'white'}} href = '/pokemon'>Back to list</a></button>
         </body>)
 }else{
     return(
@@ -47,7 +73,15 @@ if(pokemon.name == 'bulbasaur' || pokemon.name == 'ivysaur' || pokemon.name == '
         <h2 style = {{color: 'red'}}>{pokename}</h2>
         <img src = {`${pokemon.img}`}></img>
         <br />
-        <a style = {{color: 'blue'}} href = '/pokemon'>back</a>
+        <div style={{display:'inline-flex'}}>
+            <form action={`/pokemon/${pokemon._id}/edit?_method=EDIT`} method="PUT">
+                <input style={{backgroundColor:'blue', color:'white', borderRadius:'20px'}} type="submit" value="Edit"/>
+            </form>
+            <form action={`/pokemon/${pokemon._id}?_method=DELETE`} method="POST">
+                <input style={{backgroundColor:'crimson', color:'white',borderRadius:'20px'}} type="submit" value="Delete"/>
+            </form>
+        </div>
+            <button style = {{backgroundColor:'green', color: 'white', borderRadius: '20px'}}><a style ={{color:'white'}} href = '/pokemon'>Back to list</a></button>
         </body>)
 }
 }}

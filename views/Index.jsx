@@ -24,11 +24,7 @@ class Index extends React.Component {
             <a style = {{color: 'blueviolet', fontSize: '25px'}} href = {`/pokemon/${poke.id}`}>
             {pokename}
             </a>
-            <br />
-            <form action={`/pokemon/${poke._id}?_method=DELETE`} method="POST">
-                <input type="submit" value="DELETE"/>
-            </form>
-            <a style = {{color: 'blueviolet'}} href={`/pokemon/${poke._id}/edit`}>Edit This Pokemon</a>
+      
             <br />
             <br />
         </li>
