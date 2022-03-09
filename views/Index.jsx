@@ -14,7 +14,7 @@ class Index extends React.Component {
 <body style = {{backgroundColor: 'aquamarine'}}>
     <h1 style = {{color: 'blueviolet'}}>See All The Pokemon!</h1>
     <nav>
-        <a href="/pokemon/new">Create a new Pokemon!</a>
+        <a style = {{color: 'blueviolet'}} href="/pokemon/new">Create a new Pokemon!</a>
     </nav>
     <ul>
     {pokemon.map((poke, i)=>{
