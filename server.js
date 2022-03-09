@@ -3,11 +3,13 @@ const express = require('express')
 const Pokemon = require('./models/pokemon')
 const app = express()
 const mongoose = require('mongoose')
+const methodOverride = require('method-override')
 const PORT = process.env.PORT || 3000
 
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
+app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended:true}))
 
 app.get('/', (req, res) => {
@@ -50,9 +52,33 @@ app.get('/pokemon/:id', (req, res) => {
 
 app.post('/pokemon', (req, res) => {
     Pokemon.create(req.body, (err, createdPokemon)=>{
-    res.redirect('/pokemon')  //send user back to /pokemon
+    res.redirect('/pokemon')
     })
 })
+
+app.delete('/pokemon/:id', (req, res) =>{
+    Pokemon.findByIdAndRemove(req.params.id, (err, data)=>{
+         res.redirect('/pokemon')
+    });
+});
+
+app.put('/pokemon/:id', (req, res)=>{
+    Pokemon.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=>{
+        res.redirect('/pokemon');
+    });
+});
+
+app.get('/pokemon/:id/edit', (req, res)=>{
+    Pokemon.findById(req.params.id, (err, foundPokemon)=>{
+      if(!err){
+        res.render('Edit',{
+    		pokemon: foundPokemon
+    	});
+    } else {
+      res.send({ msg: err.message })
+    }
+    });
+});
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.once('open', ()=> {

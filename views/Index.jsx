@@ -20,11 +20,15 @@ class Index extends React.Component {
     {pokemon.map((poke, i)=>{
         const pokename = poke.name.charAt(0).toUpperCase() + poke.name.slice(1)
         return(
-        <li>
+        <li key={i}>
             <a style = {{color: 'blueviolet', fontSize: '25px'}} href = {`/pokemon/${poke.id}`}>
             {pokename}
             </a>
             <br />
+            <form action={`/pokemon/${poke._id}?_method=DELETE`} method="POST">
+                <input type="submit" value="DELETE"/>
+            </form>
+            <a style = {{color: 'blueviolet'}} href={`/pokemon/${poke._id}/edit`}>Edit This Pokemon</a>
             <br />
             <br />
         </li>

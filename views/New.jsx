@@ -9,7 +9,6 @@ class New extends React.Component {
             <form action = "/pokemon" method = "POST">
                 Name: <input type = "text" name = "name" /><br/>
                 Image URL: <input type = "text" name = "img" /><br/>
-                *Please remove .jpg from the end of your url as we have already added it for you<br />
                 <input type="submit" name="" value="Create Pokemon"/>
                 </form>    
             </div>)
